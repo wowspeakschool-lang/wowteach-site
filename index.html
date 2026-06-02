@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#7B61FF">
+<!-- ЗАМЕНИ title/description под SEO -->
+<title>Работа в WowSpeak — преподавай английский в команде мечты 🦉</title>
+<meta name="description" content="WowSpeak ищет преподавателей и методистов английского. Готовая платформа, поддержка методистов, геймификация, гибкий график. Плюс курсы повышения квалификации.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --purple:#7B61FF; --purple-dark:#5A45D9; --purple-light:#F0ECFF;
+  --orange:#FF8C42; --orange-light:#FFE8D6;
+  --pink:#E91E8C; --green:#22C55E; --green-light:#DCFCE7;
+  --yellow:#F59E0B;
+  --cream:#FFFBF2; --cream-dark:#F5EFE2;
+  --dark:#2D2D3F; --gray-text:#5A5A6E; --border:#E5E7EB; --white:#FFFFFF;
+  --radius:14px; --radius-lg:24px;
+  --shadow-sm:0 1px 3px rgba(45,45,63,.06);
+  --shadow:0 8px 28px rgba(45,45,63,.10);
+  --shadow-lg:0 18px 44px rgba(45,45,63,.16);
+}
+*{box-sizing:border-box;margin:0;padding:0;font-family:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{
+  font-family:'Nunito',-apple-system,BlinkMacSystemFont,sans-serif;
+  color:var(--dark); background:var(--cream); line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(circle, rgba(123,97,255,.05) 1px, transparent 1px);
+  background-size:26px 26px;
+}
+h1,h2,h3,.display{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.15}
+a{color:var(--purple);text-decoration:none}
+button{cursor:pointer;border:none;background:none;font:inherit;color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+.section{padding:88px 0}
+.eyebrow{display:inline-block;font-weight:800;font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--purple);background:var(--purple-light);
+  padding:6px 14px;border-radius:999px;margin-bottom:16px}
+
+/* ===== Buttons ===== */
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:16px;
+  padding:14px 26px;border-radius:999px;transition:transform .15s, box-shadow .15s, background .15s;white-space:nowrap}
+.btn-primary{background:linear-gradient(135deg,var(--purple),var(--purple-dark));color:#fff;box-shadow:var(--shadow)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.btn-orange{background:linear-gradient(135deg,var(--orange),#F2722B);color:#fff;box-shadow:var(--shadow)}
+.btn-orange:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.btn-ghost{background:var(--white);color:var(--dark);border:2px solid var(--cream-dark)}
+.btn-ghost:hover{border-color:var(--purple);color:var(--purple)}
+.btn-sm{padding:10px 18px;font-size:14px}
+
+/* ===== Header ===== */
+.header{position:sticky;top:0;z-index:50;background:rgba(255,251,242,.9);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--cream-dark)}
+.header .wrap{display:flex;align-items:center;gap:20px;padding:14px 22px}
+.logo{font-family:'Fredoka',sans-serif;font-weight:600;font-size:24px;color:var(--purple);
+  display:flex;align-items:center;gap:8px}
+.logo .emoji{font-size:28px}
+.nav{display:flex;gap:26px;margin-left:18px}
+.nav a{color:var(--gray-text);font-weight:700;font-size:15px}
+.nav a:hover{color:var(--dark)}
+.header-cta{display:flex;gap:10px;margin-left:auto;align-items:center}
+.lbl-short{display:none}
+@media(max-width:900px){ .nav{display:none} }
+@media(max-width:560px){
+  .lbl-full{display:none} .lbl-short{display:inline}
+  .header .wrap{gap:10px;padding:12px 16px}
+  .header-cta{gap:7px} .header-cta .btn{padding:9px 14px;font-size:13px}
+  .logo{font-size:20px} .logo .emoji{font-size:23px}
+}
+
+/* ===== Hero ===== */
+.hero{position:relative;overflow:hidden;padding:70px 0 90px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(34px,5vw,56px);color:var(--dark)}
+.hero h1 .hl{color:var(--purple)}
+.hero p.lead{font-size:19px;color:var(--gray-text);margin:22px 0 32px;max-width:520px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:34px;margin-top:40px}
+.hero-stats .num{font-family:'Fredoka',sans-serif;font-size:30px;color:var(--purple)}
+.hero-stats .lbl{font-size:14px;color:var(--gray-text);font-weight:600}
+
+.hero-visual{position:relative;height:420px}
+.blob{position:absolute;inset:0;margin:auto;width:340px;height:340px;
+  background:linear-gradient(135deg,var(--purple-light),var(--orange-light));
+  border-radius:46% 54% 60% 40% / 50% 44% 56% 50%;filter:blur(2px)}
+.float-card{position:absolute;background:var(--white);border-radius:var(--radius-lg);
+  padding:14px 18px;box-shadow:var(--shadow);font-weight:800;display:flex;align-items:center;gap:10px;
+  animation:floaty 4s ease-in-out infinite;font-size:15px}
+.float-card .ico{font-size:24px}
+.fc1{top:18px;left:0;animation-delay:0s}
+.fc2{top:120px;right:-6px;animation-delay:.8s;color:var(--pink)}
+.fc3{bottom:24px;left:30px;animation-delay:1.6s;color:var(--green)}
+.hero-emoji{position:absolute;inset:0;margin:auto;width:200px;height:200px;display:flex;
+  align-items:center;justify-content:center;font-size:120px}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@media(max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;text-align:center}
+  .hero-cta,.hero-stats{justify-content:center}
+  .hero p.lead{margin-left:auto;margin-right:auto}
+  .hero-visual{height:300px;margin-top:10px}
+}
+
+/* ===== Reveal ===== */
+.reveal{opacity:0;transform:translateY(24px);animation:reveal .7s ease forwards}
+@keyframes reveal{to{opacity:1;transform:none}}
+.d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}.d4{animation-delay:.35s}
+
+/* ===== Section headers ===== */
+.sec-head{text-align:center;max-width:700px;margin:0 auto 48px}
+.sec-head h2{font-size:clamp(28px,4vw,40px)}
+.sec-head p{color:var(--gray-text);font-size:18px;margin-top:14px}
+
+/* ===== Why cards ===== */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.why-card{background:var(--white);border-radius:var(--radius-lg);padding:28px 24px;
+  box-shadow:var(--shadow-sm);border:1px solid var(--cream-dark);transition:transform .2s,box-shadow .2s}
+.why-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.why-card .ico{font-size:38px;margin-bottom:14px}
+.why-card h3{font-size:19px;margin-bottom:8px}
+.why-card p{color:var(--gray-text);font-size:15px}
+@media(max-width:900px){.why-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.why-grid{grid-template-columns:1fr}}
+
+/* ===== Team ===== */
+.team{background:var(--cream-dark)}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.member{text-align:center;background:var(--white);border-radius:var(--radius-lg);
+  padding:26px 20px;box-shadow:var(--shadow-sm);border:1px solid var(--cream-dark)}
+.member .ava{width:110px;height:110px;border-radius:50%;margin:0 auto 14px;overflow:hidden;
+  background:linear-gradient(135deg,var(--purple),var(--pink));
+  display:flex;align-items:center;justify-content:center;font-size:44px;color:#fff;
+  box-shadow:var(--shadow);border:4px solid #fff}
+.member .ava img{width:100%;height:100%;object-fit:cover}
+.member h3{font-size:18px}
+.member .role{color:var(--purple);font-weight:800;font-size:14px;margin:2px 0 8px}
+.member p{color:var(--gray-text);font-size:14px}
+@media(max-width:900px){.team-grid{grid-template-columns:1fr 1fr}}
+
+/* ===== Reviews ===== */
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.review{background:var(--white);border-radius:var(--radius-lg);padding:26px 24px;
+  box-shadow:var(--shadow-sm);border:1px solid var(--cream-dark)}
+.stars{color:var(--yellow);font-size:18px;margin-bottom:12px}
+.review p{font-size:15px;color:var(--dark);margin-bottom:16px}
+.review .who{display:flex;align-items:center;gap:12px}
+.review .who .ava{width:44px;height:44px;border-radius:50%;background:var(--purple-light);
+  display:flex;align-items:center;justify-content:center;font-size:20px}
+.review .who b{display:block;font-size:15px}
+.review .who span{font-size:13px;color:var(--gray-text)}
+@media(max-width:900px){.review-grid{grid-template-columns:1fr}}
+
+/* ===== Courses (for teachers) ===== */
+.courses{background:var(--cream-dark)}
+.course-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.course-card{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;
+  box-shadow:var(--shadow-sm);border:1px solid var(--cream-dark);
+  display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.course-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.course-top{padding:26px 24px 18px;background:linear-gradient(135deg,var(--purple-light),#fff)}
+.course-top .age{font-size:13px;font-weight:800;color:var(--purple);text-transform:uppercase;letter-spacing:.04em}
+.course-top h3{font-size:22px;margin:6px 0}
+.course-emoji{font-size:46px}
+.course-body{padding:20px 24px 24px;display:flex;flex-direction:column;gap:14px;flex:1}
+.course-body p{color:var(--gray-text);font-size:15px;flex:1}
+.tag{display:inline-block;font-size:12px;font-weight:800;padding:5px 11px;border-radius:999px;
+  background:var(--orange-light);color:#C2410C}
+.course-foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;gap:10px}
+.price{font-family:'Fredoka',sans-serif;font-size:22px;color:var(--dark)}
+.price small{font-size:13px;color:var(--gray-text);font-weight:600}
+@media(max-width:900px){.course-grid{grid-template-columns:1fr}}
+
+/* ===== Hiring CTA ===== */
+.hiring .box{background:linear-gradient(135deg,var(--purple),var(--purple-dark));
+  border-radius:var(--radius-lg);padding:56px 48px;color:#fff;text-align:center;
+  box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+.hiring .box::after{content:"🚀";position:absolute;font-size:180px;opacity:.12;right:-20px;bottom:-40px}
+.hiring h2{font-size:clamp(28px,4vw,40px);margin-bottom:14px}
+.hiring p{font-size:18px;opacity:.92;max-width:580px;margin:0 auto 28px}
+.hiring .btn{background:#fff;border:none;color:var(--purple-dark)}
+.hiring .perks{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;margin-top:30px;
+  font-weight:700;font-size:15px}
+.hiring .perks span{opacity:.95}
+.hiring .candidate-login{margin-top:20px;font-size:15px;opacity:.95}
+.hiring .candidate-login a{color:#fff;font-weight:800;text-decoration:underline;display:inline;padding:0}
+
+/* ===== Footer ===== */
+.footer{background:var(--dark);color:#cfcfe0;padding:56px 0 28px}
+.footer .top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;margin-bottom:36px}
+.footer .logo{color:#fff;margin-bottom:12px}
+.footer p{font-size:14px;color:#a5a5bd;max-width:320px}
+.footer h4{font-family:'Fredoka',sans-serif;color:#fff;margin-bottom:14px;font-size:17px}
+.footer a{display:block;color:#cfcfe0;margin-bottom:9px;font-size:14px}
+.footer a:hover{color:#fff}
+.footer .bottom{border-top:1px solid #3d3d52;padding-top:20px;display:flex;
+  justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px;color:#8a8aa3}
+@media(max-width:900px){.footer .top{grid-template-columns:1fr;gap:24px}}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header">
+  <div class="wrap">
+    <a href="#" class="logo"><span class="emoji">🦉</span> WowSpeak</a>
+    <nav class="nav">
+      <a href="#why">Почему мы</a>
+      <a href="#team">Команда</a>
+      <a href="#courses">Курсы для преподавателей</a>
+      <a href="#hiring">Вакансии</a>
+    </nav>
+    <div class="header-cta">
+      <!-- Фаза 2: эта ссылка → единый логин с роутингом по роли (команда → app, кандидат → кабинет кандидата) -->
+      <a href="https://app.wowteach.ru" class="btn btn-ghost btn-sm"><span class="lbl-full">Войти в кабинет</span><span class="lbl-short">Войти</span></a>
+      <a href="#hiring" class="btn btn-orange btn-sm"><span class="lbl-full">Хочу у вас работать</span><span class="lbl-short">Работать</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow reveal d1">Работа мечты для преподавателя</span>
+      <h1 class="reveal d1">Преподавай английский в команде, где <span class="hl">всё уже продумано</span> 🌟</h1>
+      <p class="lead reveal d2">
+        <!-- ЗАМЕНИ: ваш оффер преподавателю в 1–2 предложениях -->
+        Готовая платформа, поддержка методистов и замотивированные ученики через геймификацию.
+        Ты ведёшь уроки — рутину с материалами и админкой берём на себя.
+      </p>
+      <div class="hero-cta reveal d3">
+        <a href="#hiring" class="btn btn-primary">Хочу у вас работать</a>
+        <a href="#why" class="btn btn-ghost">Почему именно мы</a>
+      </div>
+      <div class="hero-stats reveal d4">
+        <!-- ЗАМЕНИ цифры на реальные -->
+        <div><div class="num">20+</div><div class="lbl">преподавателей</div></div>
+        <div><div class="num">500+</div><div class="lbl">учеников</div></div>
+        <div><div class="num">0</div><div class="lbl">рутины с админкой</div></div>
+      </div>
+    </div>
+    <div class="hero-visual reveal d2">
+      <div class="blob"></div>
+      <div class="hero-emoji">🦉</div>
+      <div class="float-card fc1"><span class="ico">🗓️</span> Гибкий график</div>
+      <div class="float-card fc2"><span class="ico">📚</span> Готовые материалы</div>
+      <div class="float-card fc3"><span class="ico">💛</span> Дружная команда</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY (выгоды для препода) ============ -->
+<section class="section" id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Почему WowSpeak</span>
+      <h2>Здесь преподавать в кайф</h2>
+      <p><!-- ЗАМЕНИ -->Мы убрали всё, что мешает учителю любить свою работу.</p>
+    </div>
+    <div class="why-grid">
+      <!-- ЗАМЕНИ тексты карточек -->
+      <div class="why-card"><div class="ico">📚</div><h3>Готовые материалы</h3><p>Методисты дают программу и уроки — не нужно изобретать с нуля.</p></div>
+      <div class="why-card"><div class="ico">🎮</div><h3>Геймификация за тебя</h3><p>Платформа сама мотивирует учеников баллами и наградами — приходят с горящими глазами.</p></div>
+      <div class="why-card"><div class="ico">🗓️</div><h3>Гибкий график</h3><p>Удалёнка, сам выбираешь нагрузку и удобные слоты.</p></div>
+      <div class="why-card"><div class="ico">🌱</div><h3>Рост и поддержка</h3><p>Наставники, комьюнити и курсы повышения квалификации — без выгорания.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEAM (реклама команды) ============ -->
+<section class="section team" id="team">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Наша команда</span>
+      <h2>Люди, к которым хочется присоединиться</h2>
+      <p><!-- ЗАМЕНИ -->Преподаватели и методисты WowSpeak — те, с кем ты будешь работать каждый день.</p>
+    </div>
+    <div class="team-grid">
+      <!-- ЗАМЕНИ на реальных людей. Фото: <img src="..."> внутри .ava вместо эмодзи -->
+      <div class="member"><div class="ava">👩‍🏫</div><h3>Имя Фамилия</h3><div class="role">Методист</div><p>Опыт, специализация, пара тёплых слов.</p></div>
+      <div class="member"><div class="ava">🧑‍🏫</div><h3>Имя Фамилия</h3><div class="role">Преподаватель</div><p>Опыт, специализация, пара тёплых слов.</p></div>
+      <div class="member"><div class="ava">👩‍🏫</div><h3>Имя Фамилия</h3><div class="role">Преподаватель</div><p>Опыт, специализация, пара тёплых слов.</p></div>
+      <div class="member"><div class="ava">🧑‍🏫</div><h3>Имя Фамилия</h3><div class="role">Преподаватель</div><p>Опыт, специализация, пара тёплых слов.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS (отзывы преподавателей) ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Отзывы команды</span>
+      <h2>Каково работать в WowSpeak</h2>
+    </div>
+    <div class="review-grid">
+      <!-- ЗАМЕНИ на реальные отзывы преподавателей -->
+      <div class="review"><div class="stars">★★★★★</div><p>«Впервые работаю там, где не надо тащить на себе всё: материалы готовы, поддержка рядом.»</p><div class="who"><div class="ava">🙂</div><div><b>Имя</b><span>преподаватель, 2 года в команде</span></div></div></div>
+      <div class="review"><div class="stars">★★★★★</div><p>«Гибкий график спас мой баланс. И дети правда вовлечены — это кайф.»</p><div class="who"><div class="ava">😊</div><div><b>Имя</b><span>преподаватель, 1 год в команде</span></div></div></div>
+      <div class="review"><div class="stars">★★★★★</div><p>«Курсы повышения квалификации реально прокачали мою методику.»</p><div class="who"><div class="ava">🥰</div><div><b>Имя</b><span>методист</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COURSES (для преподавателей, платные) ============ -->
+<section class="section courses" id="courses">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Курсы для преподавателей</span>
+      <h2>Прокачай свою методику</h2>
+      <p><!-- ЗАМЕНИ -->Авторские курсы и повышение квалификации от методистов WowSpeak — для всех преподавателей, не только наших.</p>
+    </div>
+    <div class="course-grid">
+      <!-- ЗАМЕНИ названия/описания/цены курсов -->
+      <div class="course-card">
+        <div class="course-top"><div class="course-emoji">🎮</div><div class="age">Методика</div><h3>Геймификация на уроках</h3></div>
+        <div class="course-body">
+          <p>Как удерживать внимание и мотивировать учеников через игру, баллы и награды.</p>
+          <span class="tag">Онлайн · сертификат</span>
+          <div class="course-foot"><div class="price">5 900 ₽</div><a href="#" class="btn btn-primary btn-sm">Записаться</a></div>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="course-top"><div class="course-emoji">🐣</div><div class="age">Малыши 4–6</div><h3>Английский для дошкольников</h3></div>
+        <div class="course-body">
+          <p>Методика обучения самых маленьких: песни, движение, удержание внимания.</p>
+          <span class="tag">Онлайн · сертификат</span>
+          <div class="course-foot"><div class="price">6 900 ₽</div><a href="#" class="btn btn-primary btn-sm">Записаться</a></div>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="course-top"><div class="course-emoji">🎓</div><div class="age">Квалификация</div><h3>Повышение квалификации</h3></div>
+        <div class="course-body">
+          <p>Комплексная программа с итоговым сертификатом для практикующих преподавателей.</p>
+          <span class="tag">Новый поток</span>
+          <div class="course-foot"><div class="price">9 900 ₽</div><a href="#" class="btn btn-primary btn-sm">Записаться</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HIRING (воронка найма) ============ -->
+<section class="section hiring" id="hiring">
+  <div class="wrap">
+    <div class="box">
+      <h2>Хочешь работать в WowSpeak? 🚀</h2>
+      <p><!-- ЗАМЕНИ -->Мы ищем преподавателей и методистов английского, которым нравится учить через игру. Заполни анкету — и мы свяжемся.</p>
+      <!-- Фаза 2: здесь будет анкета → Supabase (api.wowteach.ru). Пока ведём на почту/мессенджер -->
+      <a href="mailto:hr@wowteach.ru?subject=Хочу%20работать%20в%20WowSpeak" class="btn">Заполнить анкету</a>
+      <!-- ЗАМЕНИ поддомен на реальный кабинет кандидата -->
+      <div class="candidate-login">Уже оставил(а) заявку? <a href="https://job.wowteach.ru">Войти в кабинет кандидата →</a></div>
+      <div class="perks">
+        <span>🗓️ Гибкий график</span>
+        <span>💻 Удалённо</span>
+        <span>📦 Готовая платформа</span>
+        <span>🌱 Обучение и рост</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <div class="logo"><span class="emoji">🦉</span> WowSpeak</div>
+        <p>Онлайн-школа английского с геймификацией. Команда преподавателей и методистов, которые любят своё дело.</p>
+      </div>
+      <div>
+        <h4>Разделы</h4>
+        <a href="#why">Почему мы</a>
+        <a href="#team">Команда</a>
+        <a href="#courses">Курсы для преподавателей</a>
+        <a href="#hiring">Вакансии</a>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <a href="https://app.wowteach.ru">Личный кабинет →</a>
+        <a href="mailto:hr@wowteach.ru">hr@wowteach.ru</a>
+        <a href="#">Telegram</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 WowSpeak. Все права защищены.</span>
+      <span><!-- Фаза 3: оферта/политика для продажи курсов --><a href="#" style="display:inline;margin:0">Политика конфиденциальности</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
