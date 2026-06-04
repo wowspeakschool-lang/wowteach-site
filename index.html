@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#7B61FF">
+<title>Работа в WowSpeak — преподавайте английский в команде, которая вкладывается в вас 🦉</title>
+<meta name="description" content="WowSpeak ищет преподавателей английского. Полная удалёнка, готовые материалы, поддержка методистов, обучение и рост, честная оплата и бонусы. Онлайн-школа для детей 4–17 лет с 2012 года.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --purple:#7B61FF; --purple-dark:#5A45D9; --purple-light:#F0ECFF;
+  --orange:#FF8C42; --orange-light:#FFE8D6;
+  --pink:#E91E8C; --green:#22C55E; --green-light:#DCFCE7;
+  --yellow:#F59E0B;
+  --cream:#FFFBF2; --cream-dark:#F5EFE2;
+  --dark:#2D2D3F; --gray-text:#5A5A6E; --border:#E5E7EB; --white:#FFFFFF;
+  --radius:14px; --radius-lg:24px;
+  --shadow-sm:0 1px 3px rgba(45,45,63,.06);
+  --shadow:0 8px 28px rgba(45,45,63,.10);
+  --shadow-lg:0 18px 44px rgba(45,45,63,.16);
+}
+*{box-sizing:border-box;margin:0;padding:0;font-family:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{
+  font-family:'Nunito',-apple-system,BlinkMacSystemFont,sans-serif;
+  color:var(--dark); background:var(--cream); line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(circle, rgba(123,97,255,.05) 1px, transparent 1px);
+  background-size:26px 26px;
+}
+h1,h2,h3,.display{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.15}
+a{color:var(--purple);text-decoration:none}
+button{cursor:pointer;border:none;background:none;font:inherit;color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+.section{padding:82px 0}
+.eyebrow{display:inline-block;font-weight:800;font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--purple);background:var(--purple-light);
+  padding:6px 14px;border-radius:999px;margin-bottom:16px}
+
+/* ===== Buttons ===== */
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:16px;
+  padding:14px 26px;border-radius:999px;transition:transform .15s, box-shadow .15s, background .15s;white-space:nowrap}
+.btn-primary{background:linear-gradient(135deg,var(--purple),var(--purple-dark));color:#fff;box-shadow:var(--shadow)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.btn-orange{background:linear-gradient(135deg,var(--orange),#F2722B);color:#fff;box-shadow:var(--shadow)}
+.btn-orange:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.btn-ghost{background:var(--white);color:var(--dark);border:2px solid var(--cream-dark)}
+.btn-ghost:hover{border-color:var(--purple);color:var(--purple)}
+.btn-sm{padding:10px 18px;font-size:14px}
+
+/* ===== Header ===== */
+.header{position:sticky;top:0;z-index:50;background:rgba(255,251,242,.9);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--cream-dark)}
+.header .wrap{display:flex;align-items:center;gap:20px;padding:14px 22px}
+.logo{font-family:'Fredoka',sans-serif;font-weight:600;font-size:24px;color:var(--purple);
+  display:flex;align-items:center;gap:8px}
+.logo .emoji{font-size:28px}
+.nav{display:flex;gap:24px;margin-left:18px}
+.nav a{color:var(--gray-text);font-weight:700;font-size:15px}
+.nav a:hover{color:var(--dark)}
+.header-cta{display:flex;gap:10px;margin-left:auto;align-items:center}
+.lbl-short{display:none}
+@media(max-width:980px){ .nav{display:none} }
+@media(max-width:560px){
+  .lbl-full{display:none} .lbl-short{display:inline}
+  .header .wrap{gap:10px;padding:12px 16px}
+  .header-cta{gap:7px} .header-cta .btn{padding:9px 14px;font-size:13px}
+  .logo{font-size:20px} .logo .emoji{font-size:23px}
+}
+
+/* ===== Hero ===== */
+.hero{position:relative;overflow:hidden;padding:66px 0 86px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(32px,4.6vw,54px);color:var(--dark)}
+.hero h1 .hl{color:var(--purple)}
+.hero p.lead{font-size:19px;color:var(--gray-text);margin:22px 0 32px;max-width:540px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:30px;margin-top:40px;flex-wrap:wrap}
+.hero-stats .num{font-family:'Fredoka',sans-serif;font-size:28px;color:var(--purple)}
+.hero-stats .lbl{font-size:14px;color:var(--gray-text);font-weight:600;max-width:120px}
+
+.hero-visual{position:relative;height:420px}
+.blob{position:absolute;inset:0;margin:auto;width:340px;height:340px;
+  background:linear-gradient(135deg,var(--purple-light),var(--orange-light));
+  border-radius:46% 54% 60% 40% / 50% 44% 56% 50%;filter:blur(2px)}
+.float-card{position:absolute;background:var(--white);border-radius:var(--radius-lg);
+  padding:14px 18px;box-shadow:var(--shadow);font-weight:800;display:flex;align-items:center;gap:10px;
+  animation:floaty 4s ease-in-out infinite;font-size:15px}
+.float-card .ico{font-size:24px}
+.fc1{top:18px;left:0;animation-delay:0s}
+.fc2{top:120px;right:-6px;animation-delay:.8s;color:var(--pink)}
+.fc3{bottom:24px;left:30px;animation-delay:1.6s;color:var(--green)}
+.hero-emoji{position:absolute;inset:0;margin:auto;width:200px;height:200px;display:flex;
+  align-items:center;justify-content:center;font-size:120px}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@media(max-width:980px){
+  .hero .wrap{grid-template-columns:1fr;text-align:center}
+  .hero-cta,.hero-stats{justify-content:center}
+  .hero p.lead{margin-left:auto;margin-right:auto}
+  .hero-visual{height:300px;margin-top:10px}
+}
+
+/* ===== Reveal ===== */
+.reveal{opacity:0;transform:translateY(24px);animation:reveal .7s ease forwards}
+@keyframes reveal{to{opacity:1;transform:none}}
+.d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}.d4{animation-delay:.35s}
+
+/* ===== Section headers ===== */
+.sec-head{text-align:center;max-width:720px;margin:0 auto 48px}
+.sec-head h2{font-size:clamp(28px,4vw,40px)}
+.sec-head p{color:var(--gray-text);font-size:18px;margin-top:14px}
+
+/* ===== About / stats band ===== */
+.about .wrap{display:grid;grid-template-columns:1fr;gap:36px;text-align:center;max-width:840px}
+.about p.big{font-size:clamp(20px,2.6vw,26px);font-family:'Fredoka',sans-serif;line-height:1.4}
+.about p.big b{color:var(--purple)}
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.stat{background:var(--white);border:1px solid var(--cream-dark);border-radius:var(--radius-lg);padding:24px 16px;box-shadow:var(--shadow-sm)}
+.stat .num{font-family:'Fredoka',sans-serif;font-size:30px;color:var(--purple)}
+.stat .lbl{font-size:14px;color:var(--gray-text);font-weight:700;margin-top:4px}
+@media(max-width:760px){.stat-row{grid-template-columns:1fr 1fr}}
+
+/* ===== Why cards ===== */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.why-card{background:var(--white);border-radius:var(--radius-lg);padding:28px 24px;
+  box-shadow:var(--shadow-sm);border:1px solid var(--cream-dark);transition:transform .2s,box-shadow .2s}
+.why-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.why-card .ico{font-size:36px;margin-bottom:14px}
+.why-card h3{font-size:19px;margin-bottom:8px}
+.why-card p{color:var(--gray-text);font-size:15px}
+@media(max-width:900px){.why-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.why-grid{grid-template-columns:1fr}}
+
+/* ===== Perks ===== */
+.perks{background:var(--cream-dark)}
+.perks-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;max-width:920px;margin:0 auto}
+.perk{display:flex;gap:14px;align-items:flex-start;background:var(--white);
+  border:1px solid var(--cream-dark);border-radius:var(--radius);padding:16px 18px}
+.perk .ck{color:var(--green);font-size:20px;font-weight:900;flex-shrink:0;line-height:1.4}
+.perk b{font-weight:800;display:block}
+.perk .d{color:var(--gray-text);font-size:14px}
+@media(max-width:700px){.perks-grid{grid-template-columns:1fr}}
+
+/* ===== Career band ===== */
+.career-band{background:linear-gradient(135deg,var(--orange-light),var(--purple-light));
+  border-radius:var(--radius-lg);padding:48px 40px;text-align:center;box-shadow:var(--shadow-sm)}
+.career-band .ico{font-size:42px;margin-bottom:8px}
+.career-band h2{font-size:clamp(26px,3.5vw,36px);margin-bottom:14px}
+.career-band p{font-size:18px;color:var(--gray-text);max-width:760px;margin:0 auto}
+
+/* ===== Team ===== */
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.member{text-align:center;background:var(--white);border-radius:var(--radius-lg);
+  padding:26px 20px;box-shadow:var(--shadow-sm);border:1px solid var(--cream-dark)}
+.member .ava{width:110px;height:110px;border-radius:50%;margin:0 auto 14px;overflow:hidden;
+  background:linear-gradient(135deg,var(--purple),var(--pink));
+  display:flex;align-items:center;justify-content:center;font-size:44px;color:#fff;
+  box-shadow:var(--shadow);border:4px solid #fff}
+.member .ava img{width:100%;height:100%;object-fit:cover}
+.member h3{font-size:18px}
+.member .role{color:var(--purple);font-weight:800;font-size:14px;margin:2px 0 8px}
+.member p{color:var(--gray-text);font-size:14px}
+@media(max-width:900px){.team-grid{grid-template-columns:1fr 1fr}}
+
+/* ===== Reviews ===== */
+.reviews{background:var(--cream-dark)}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.review{background:var(--white);border-radius:var(--radius-lg);padding:26px 24px;
+  box-shadow:var(--shadow-sm);border:1px solid var(--cream-dark)}
+.stars{color:var(--yellow);font-size:18px;margin-bottom:12px}
+.review p{font-size:15px;color:var(--dark);margin-bottom:16px}
+.review .who{display:flex;align-items:center;gap:12px}
+.review .who .ava{width:44px;height:44px;border-radius:50%;background:var(--purple-light);
+  display:flex;align-items:center;justify-content:center;font-size:20px}
+.review .who b{display:block;font-size:15px}
+.review .who span{font-size:13px;color:var(--gray-text)}
+@media(max-width:900px){.review-grid{grid-template-columns:1fr}}
+
+/* ===== Courses ===== */
+.course-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.course-card{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;
+  box-shadow:var(--shadow-sm);border:1px solid var(--cream-dark);
+  display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.course-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.course-top{padding:26px 24px 18px;background:linear-gradient(135deg,var(--purple-light),#fff)}
+.course-top .age{font-size:13px;font-weight:800;color:var(--purple);text-transform:uppercase;letter-spacing:.04em}
+.course-top h3{font-size:22px;margin:6px 0}
+.course-emoji{font-size:44px}
+.course-body{padding:20px 24px 24px;display:flex;flex-direction:column;gap:14px;flex:1}
+.course-body p{color:var(--gray-text);font-size:15px;flex:1}
+.tag{display:inline-block;font-size:12px;font-weight:800;padding:5px 11px;border-radius:999px;
+  background:var(--orange-light);color:#C2410C}
+.course-foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;gap:10px}
+.price{font-family:'Fredoka',sans-serif;font-size:22px;color:var(--dark)}
+.note-free{text-align:center;color:var(--gray-text);font-size:15px;margin-top:26px}
+.note-free b{color:var(--green)}
+@media(max-width:900px){.course-grid{grid-template-columns:1fr}}
+
+/* ===== Vacancies ===== */
+.vacancies{background:var(--cream-dark)}
+.vac-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.vac{background:var(--white);border:1px solid var(--cream-dark);border-radius:var(--radius-lg);
+  padding:30px 28px;box-shadow:var(--shadow-sm)}
+.vac .open{font-size:12px;font-weight:800;color:#15803D;background:var(--green-light);
+  padding:5px 12px;border-radius:999px;display:inline-block;margin-bottom:14px}
+.vac h3{font-size:23px;margin-bottom:6px}
+.vac .meta{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 16px}
+.vac .meta span{font-size:13px;font-weight:700;background:var(--purple-light);color:var(--purple-dark);padding:5px 11px;border-radius:999px}
+.vac p{color:var(--gray-text);font-size:15px;margin-bottom:20px}
+@media(max-width:700px){.vac-grid{grid-template-columns:1fr}}
+
+/* ===== Journey / process ===== */
+.journey{display:grid;grid-template-columns:repeat(5,1fr);gap:0;max-width:1000px;margin:0 auto}
+.j-step{position:relative;text-align:center;padding:0 14px}
+.j-step:not(:last-child)::after{content:"";position:absolute;top:30px;left:50%;width:100%;height:3px;
+  background:linear-gradient(90deg,var(--purple),var(--purple-light));z-index:0}
+.j-circle{width:60px;height:60px;border-radius:50%;
+  background:linear-gradient(135deg,var(--purple),var(--purple-dark));
+  color:#fff;font-family:'Fredoka',sans-serif;font-size:24px;font-weight:600;
+  display:flex;align-items:center;justify-content:center;margin:0 auto 18px;
+  position:relative;z-index:1;box-shadow:0 8px 18px rgba(123,97,255,.35);
+  border:4px solid var(--cream);transition:transform .2s}
+.j-step:hover .j-circle{transform:translateY(-4px) scale(1.05)}
+.j-step h3{font-size:16px;margin-bottom:6px}
+.j-step p{font-size:13px;color:var(--gray-text)}
+@media(max-width:760px){
+  .journey{grid-template-columns:1fr;max-width:440px}
+  .j-step{display:grid;grid-template-columns:60px 1fr;gap:18px;text-align:left;padding:0 0 30px}
+  .j-step:not(:last-child)::after{top:60px;left:28px;width:3px;height:100%;
+    background:linear-gradient(180deg,var(--purple),var(--purple-light))}
+  .j-circle{margin:0}
+  .j-text{padding-top:7px}
+}
+
+/* ===== Hiring CTA ===== */
+.hiring .box{background:linear-gradient(135deg,var(--purple),var(--purple-dark));
+  border-radius:var(--radius-lg);padding:56px 48px;color:#fff;text-align:center;
+  box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+.hiring .box::after{content:"🦉";position:absolute;font-size:170px;opacity:.12;right:-14px;bottom:-34px}
+.hiring h2{font-size:clamp(28px,4vw,40px);margin-bottom:14px}
+.hiring p{font-size:18px;opacity:.92;max-width:600px;margin:0 auto 28px}
+.hiring .btn{background:#fff;border:none;color:var(--purple-dark)}
+.hiring .perks-mini{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:28px;font-weight:700;font-size:15px}
+.hiring .candidate-login{margin-top:22px;font-size:15px;opacity:.95}
+.hiring .candidate-login a{color:#fff;font-weight:800;text-decoration:underline;display:inline;padding:0}
+
+/* ===== Footer ===== */
+.footer{background:var(--dark);color:#cfcfe0;padding:56px 0 28px}
+.footer .top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;margin-bottom:36px}
+.footer .logo{color:#fff;margin-bottom:12px}
+.footer p{font-size:14px;color:#a5a5bd;max-width:340px}
+.footer h4{font-family:'Fredoka',sans-serif;color:#fff;margin-bottom:14px;font-size:17px}
+.footer a{display:block;color:#cfcfe0;margin-bottom:9px;font-size:14px}
+.footer a:hover{color:#fff}
+.footer .bottom{border-top:1px solid #3d3d52;padding-top:20px;display:flex;
+  justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px;color:#8a8aa3}
+@media(max-width:900px){.footer .top{grid-template-columns:1fr;gap:24px}}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header">
+  <div class="wrap">
+    <a href="#" class="logo"><span class="emoji">🦉</span> WowSpeak</a>
+    <nav class="nav">
+      <a href="#about">О школе</a>
+      <a href="#why">Почему мы</a>
+      <a href="#perks">Что вы получите</a>
+      <a href="#vacancies">Вакансии</a>
+      <a href="#how">Как попасть</a>
+    </nav>
+    <div class="header-cta">
+      <!-- Фаза 2: эта ссылка → единый логин с роутингом по роли (команда → app, кандидат → кабинет кандидата) -->
+      <a href="https://app.wowteach.ru" class="btn btn-ghost btn-sm"><span class="lbl-full">Войти в кабинет</span><span class="lbl-short">Войти</span></a>
+      <a href="#hiring" class="btn btn-orange btn-sm"><span class="lbl-full">Хочу у вас работать</span><span class="lbl-short">Работать</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow reveal d1">Работа в онлайн-школе WowSpeak</span>
+      <h1 class="reveal d1">Преподавайте английский в команде, которая <span class="hl">вкладывается в вас</span> 🌟</h1>
+      <p class="lead reveal d2">
+        WowSpeak — это экосистема, где над результатом ученика работает целая команда. Мы не оставляем
+        преподавателя один на один с уроками: даём готовые материалы, поддержку методистов и помогаем расти —
+        от первых учеников до методиста и спикера. Полная удалёнка, честная оплата, тёплое комьюнити.
+      </p>
+      <div class="hero-cta reveal d3">
+        <a href="#hiring" class="btn btn-primary">Хочу у вас работать</a>
+        <a href="#why" class="btn btn-ghost">Почему именно мы</a>
+      </div>
+      <div class="hero-stats reveal d4">
+        <div><div class="num">60+</div><div class="lbl">преподавателей</div></div>
+        <div><div class="num">с 2012</div><div class="lbl">в образовании</div></div>
+        <div><div class="num">5000+</div><div class="lbl">учеников</div></div>
+        <div><div class="num">1,5+ года</div><div class="lbl">средний стаж в команде</div></div>
+      </div>
+    </div>
+    <div class="hero-visual reveal d2">
+      <div class="blob"></div>
+      <div class="hero-emoji">🦉</div>
+      <div class="float-card fc1"><span class="ico">📚</span> Готовые материалы</div>
+      <div class="float-card fc2"><span class="ico">🎓</span> Обучение и рост</div>
+      <div class="float-card fc3"><span class="ico">💛</span> Поддержка команды</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section about" id="about">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">О школе</span>
+      <p class="big">WowSpeak — онлайн-школа английского для детей <b>4–17 лет</b>. В образовании с <b>2012 года</b>,
+      онлайн — с 2020. Учим индивидуально и в группах, с лицензией и целой командой методистов и кураторов
+      за спиной каждого преподавателя.</p>
+    </div>
+    <div class="stat-row">
+      <div class="stat"><div class="num">60+</div><div class="lbl">преподавателей в команде</div></div>
+      <div class="stat"><div class="num">5000+</div><div class="lbl">учеников заговорили</div></div>
+      <div class="stat"><div class="num">1-на-1<br>и группы</div><div class="lbl">форматы уроков</div></div>
+      <div class="stat"><div class="num">🪪</div><div class="lbl">лицензия на образовательную деятельность</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY (поддержка преподавателя) ============ -->
+<section class="section" id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Почему у нас</span>
+      <h2>Мы растим сильных преподавателей</h2>
+      <p>Здесь не бросают одного с программой и родителями. Вокруг вас — система поддержки на каждом этапе.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><div class="ico">📚</div><h3>Готовые материалы</h3><p>Программы, уроки и презентации уже собраны — не нужно готовить урок с нуля.</p></div>
+      <div class="why-card"><div class="ico">🎓</div><h3>Профессиональное развитие</h3><p>Отдел Профразвития: индивидуальные и групповые тренинги, обучающие курсы с экзаменами и сертификатами.</p></div>
+      <div class="why-card"><div class="ico">🔍</div><h3>Поддержка качества</h3><p>Отдел Контроля качества ежемесячно смотрит уроки и даёт развёрнутую обратную связь — для роста, а не ради галочки.</p></div>
+      <div class="why-card"><div class="ico">💬</div><h3>Методист на связи</h3><p>Задаёте вопрос через форму — получаете ответ от методиста. Поддержка на всех этапах работы.</p></div>
+      <div class="why-card"><div class="ico">🛟</div><h3>Ассистент преподавателя</h3><p>Общение с родителями идёт через ассистента — ваши личные контакты защищены. Плюс помощь по техническим вопросам.</p></div>
+      <div class="why-card"><div class="ico">💛</div><h3>Тёплое комьюнити</h3><p>Созвоны, чаты, мероприятия. Преподаватели на связи друг с другом, делятся фишками и опытом.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PERKS ============ -->
+<section class="section perks" id="perks">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Что вы получите</span>
+      <h2>Условия и плюшки</h2>
+    </div>
+    <div class="perks-grid">
+      <div class="perk"><span class="ck">✓</span><div><b>Оплата за урок</b><div class="d">Зависит от формата и длительности. Зарплата раз в месяц за предыдущий месяц.</div></div></div>
+      <div class="perk"><span class="ck">✓</span><div><b>Премии и бонусы</b><div class="d">Многие начинают зарабатывать первые бонусы уже в первые месяцы.</div></div></div>
+      <div class="perk"><span class="ck">✓</span><div><b>Баллы → деньги и плюшки</b><div class="d">Накопленные баллы можно обменять на деньги или другие приятности.</div></div></div>
+      <div class="perk"><span class="ck">✓</span><div><b>Реферальная программа</b><div class="d">Приводите коллег — получаете вознаграждение.</div></div></div>
+      <div class="perk"><span class="ck">✓</span><div><b>Система замен на отпуск</b><div class="d">Уходите отдыхать спокойно — учеников есть кому подхватить.</div></div></div>
+      <div class="perk"><span class="ck">✓</span><div><b>Бесплатные курсы при приёме</b><div class="d">Доступ к нашим курсам повышения квалификации сразу при трудоустройстве.</div></div></div>
+      <div class="perk"><span class="ck">✓</span><div><b>Вводное обучение и наставник</b><div class="d">Мягкий старт: вас обучат и проведут за руку первые шаги.</div></div></div>
+      <div class="perk"><span class="ck">✓</span><div><b>Полная удалёнка, гибкий график</b><div class="d">Работаете из любой точки. Минимальная нагрузка — 60 уроков в месяц, дальше — по желанию.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAREER ============ -->
+<section class="section" id="career">
+  <div class="wrap">
+    <div class="career-band">
+      <div class="ico">🚀</div>
+      <h2>Здесь по-настоящему растут</h2>
+      <p>Преподаватели меняют грейд и развиваются не только как учителя: многие становятся частью методической
+      команды — разрабатывают материалы, коучат коллег и выступают спикерами на внутренних мероприятиях.
+      Средний стаж в команде — больше полутора лет, и это не случайно.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEAM ============ -->
+<section class="section" id="team">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Наша команда</span>
+      <h2>Люди, к которым хочется присоединиться</h2>
+      <p>Преподаватели и методисты WowSpeak — те, с кем вы будете работать каждый день.</p>
+    </div>
+    <div class="team-grid">
+      <!-- ЗАМЕНИТЕ на реальных людей. Фото: <img src="..."> внутри .ava вместо эмодзи -->
+      <div class="member"><div class="ava">👩‍🏫</div><h3>Имя Фамилия</h3><div class="role">Методист</div><p>Опыт, специализация, пара тёплых слов.</p></div>
+      <div class="member"><div class="ava">🧑‍🏫</div><h3>Имя Фамилия</h3><div class="role">Преподаватель</div><p>Опыт, специализация, пара тёплых слов.</p></div>
+      <div class="member"><div class="ava">👩‍🏫</div><h3>Имя Фамилия</h3><div class="role">Контроль качества</div><p>Опыт, специализация, пара тёплых слов.</p></div>
+      <div class="member"><div class="ava">🧑‍🏫</div><h3>Имя Фамилия</h3><div class="role">Ассистент преподавателя</div><p>Опыт, специализация, пара тёплых слов.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS (отзывы преподавателей) ============ -->
+<section class="section reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Отзывы команды</span>
+      <h2>Каково работать в WowSpeak</h2>
+    </div>
+    <div class="review-grid">
+      <!-- ЗАМЕНИТЕ на реальные отзывы преподавателей -->
+      <div class="review"><div class="stars">★★★★★</div><p>«Впервые работаю там, где не нужно тащить всё на себе: материалы готовы, методист рядом, родители — через ассистента.»</p><div class="who"><div class="ava">🙂</div><div><b>Имя</b><span>преподаватель, 2 года в команде</span></div></div></div>
+      <div class="review"><div class="stars">★★★★★</div><p>«Нагрузку набрала быстро, первые бонусы пришли уже через пару месяцев. Удалёнка — мечта.»</p><div class="who"><div class="ava">😊</div><div><b>Имя</b><span>преподаватель, 1 год в команде</span></div></div></div>
+      <div class="review"><div class="stars">★★★★★</div><p>«Ежемесячный ассесмент с обратной связью реально прокачал мою методику. Доросла до методической команды.»</p><div class="who"><div class="ava">🥰</div><div><b>Имя</b><span>методист</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COURSES (для преподавателей, платные) ============ -->
+<section class="section" id="courses">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Курсы для преподавателей</span>
+      <h2>Курсы повышения квалификации</h2>
+      <p>Авторские курсы с экзаменами и сертификатами от методистов WowSpeak — для всех преподавателей, не только наших.</p>
+    </div>
+    <div class="course-grid">
+      <!-- ЗАМЕНИТЕ названия / описания / цены курсов -->
+      <div class="course-card">
+        <div class="course-top"><div class="course-emoji">🐣</div><div class="age">Малыши 4–6</div><h3>Английский для дошкольников</h3></div>
+        <div class="course-body"><p>Методика обучения самых маленьких: вовлечение через игру, движение и эмоции.</p><span class="tag">Экзамен · сертификат</span><div class="course-foot"><div class="price">6 900 ₽</div><a href="#" class="btn btn-primary btn-sm">Записаться</a></div></div>
+      </div>
+      <div class="course-card">
+        <div class="course-top"><div class="course-emoji">🗣️</div><div class="age">Speaking</div><h3>Развитие речи у детей</h3></div>
+        <div class="course-body"><p>Как разговорить ученика и снять языковой барьер на онлайн-уроке.</p><span class="tag">Экзамен · сертификат</span><div class="course-foot"><div class="price">5 900 ₽</div><a href="#" class="btn btn-primary btn-sm">Записаться</a></div></div>
+      </div>
+      <div class="course-card">
+        <div class="course-top"><div class="course-emoji">🎓</div><div class="age">Квалификация</div><h3>Повышение квалификации</h3></div>
+        <div class="course-body"><p>Комплексная программа с итоговым экзаменом и сертификатом для практикующих преподавателей.</p><span class="tag">Новый поток</span><div class="course-foot"><div class="price">9 900 ₽</div><a href="#" class="btn btn-primary btn-sm">Записаться</a></div></div>
+      </div>
+    </div>
+    <p class="note-free">🎁 Для преподавателей WowSpeak доступ к этим курсам — <b>бесплатно при приёме на работу</b>.</p>
+  </div>
+</section>
+
+<!-- ============ VACANCIES ============ -->
+<section class="section vacancies" id="vacancies">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Открытые вакансии</span>
+      <h2>Сейчас мы ищем</h2>
+      <p>Нашли себя? Откликайтесь — расскажем подробности и проведём по всем этапам.</p>
+    </div>
+    <div class="vac-grid">
+      <!-- ЗАМЕНИТЕ описание/требования полным текстом вакансии (Анна пришлёт) -->
+      <div class="vac">
+        <span class="open">● Открыта</span>
+        <h3>Преподаватель английского</h3>
+        <div class="meta"><span>Удалённо</span><span>дети 4–12 и подростки</span><span>от 15 занятий/нед</span><span>25 000–120 000 ₽</span></div>
+        <p>Ведёте уроки в Zoom по готовым материалам — подготовка, родители и техника на команде. Прозрачная мотивация: фикс + растущие бонусы.</p>
+        <a href="vacancy-teacher.html" class="btn btn-primary">Смотреть вакансию →</a>
+      </div>
+      <div class="vac">
+        <span class="open">● Открыта</span>
+        <h3>Менеджер вводного урока</h3>
+        <div class="meta"><span>Удалённо</span><span>вводные уроки 40 мин</span><span>от 20 уроков/нед</span><span>400 ₽/урок + % продаж</span></div>
+        <p>Определяете уровень ученика на вводном уроке в Zoom и помогаете семье выбрать программу. Фикс за урок + премии за продажи.</p>
+        <a href="vacancy-manager.html" class="btn btn-primary">Смотреть вакансию →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW (процесс отбора) ============ -->
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Как стать частью команды</span>
+      <h2>Путь из 5 шагов</h2>
+      <p>Прозрачно и без сюрпризов — вы всегда знаете, что дальше.</p>
+    </div>
+    <div class="journey">
+      <div class="j-step"><div class="j-circle">1</div><div class="j-text"><h3>Анкета и видео-визитка</h3><p>Заполняете анкету и записываете короткое видео о себе.</p></div></div>
+      <div class="j-step"><div class="j-circle">2</div><div class="j-text"><h3>Собеседование</h3><p>Знакомимся и проводим демо-урок.</p></div></div>
+      <div class="j-step"><div class="j-circle">3</div><div class="j-text"><h3>Оффер</h3><p>Договариваемся об условиях и формате.</p></div></div>
+      <div class="j-step"><div class="j-circle">4</div><div class="j-text"><h3>Обучение и стажировка</h3><p>Вводное обучение и наставник проведут за руку.</p></div></div>
+      <div class="j-step"><div class="j-circle">5</div><div class="j-text"><h3>Выход на работу</h3><p>Получаете первых собственных учеников 🎉</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HIRING CTA ============ -->
+<section class="section hiring" id="hiring">
+  <div class="wrap">
+    <div class="box">
+      <h2>Хотите работать в WowSpeak? 🦉</h2>
+      <p>Если вам близко учить детей с заботой и хочется в команду, которая поддерживает и помогает расти — заполните анкету, и мы свяжемся.</p>
+      <!-- Фаза 2: здесь будет анкета → Supabase (api.wowteach.ru). Пока ведём на почту -->
+      <a href="mailto:hr@wowteach.ru?subject=Хочу%20работать%20в%20WowSpeak" class="btn">Заполнить анкету</a>
+      <!-- ЗАМЕНИТЕ поддомен на реальный кабинет кандидата -->
+      <div class="candidate-login">Уже оставили заявку? <a href="https://job.wowteach.ru">Войти в кабинет кандидата →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <div class="logo"><span class="emoji">🦉</span> WowSpeak</div>
+        <p>Онлайн-школа английского для детей 4–17 лет. Экосистема, где над результатом ученика работает целая команда — и где растут сами преподаватели.</p>
+      </div>
+      <div>
+        <h4>Разделы</h4>
+        <a href="#about">О школе</a>
+        <a href="#why">Почему мы</a>
+        <a href="#perks">Что вы получите</a>
+        <a href="#vacancies">Вакансии</a>
+        <a href="#how">Как попасть</a>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <a href="https://app.wowteach.ru">Личный кабинет →</a>
+        <a href="mailto:hr@wowteach.ru">hr@wowteach.ru</a>
+        <a href="https://wowspeak-online.ru">Сайт школы →</a>
+        <a href="https://t.me/wowspeak_online">Telegram</a>
+        <a href="https://vk.com/wowspeak_online">ВКонтакте</a>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 WowSpeak. Все права защищены.</span>
+      <span><!-- Фаза 3: оферта/политика для продажи курсов --><a href="#" style="display:inline;margin:0">Политика конфиденциальности</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
