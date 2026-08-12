@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#7B61FF">
+<title>Вакансия: Менеджер по продажам — WowSpeak 🦉</title>
+<meta name="description" content="WowSpeak ищет менеджера по продажам (клоузера). Удалённо, оклад 40 000 ₽ + KPI до 50 000 ₽, при плане ≈ 90 000 ₽. Тёплые лиды после вводного урока, AmoCRM и «Мой Класс».">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --purple:#7B61FF; --purple-dark:#5A45D9; --purple-light:#F0ECFF;
+  --orange:#FF8C42; --orange-light:#FFE8D6;
+  --pink:#E91E8C; --green:#22C55E; --green-light:#DCFCE7;
+  --yellow:#F59E0B;
+  --cream:#FFFBF2; --cream-dark:#F5EFE2;
+  --dark:#2D2D3F; --gray-text:#5A5A6E; --border:#E5E7EB; --white:#FFFFFF;
+  --radius:14px; --radius-lg:24px;
+  --shadow-sm:0 1px 3px rgba(45,45,63,.06);
+  --shadow:0 8px 28px rgba(45,45,63,.10);
+  --shadow-lg:0 18px 44px rgba(45,45,63,.16);
+}
+*{box-sizing:border-box;margin:0;padding:0;font-family:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:'Nunito',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--dark);
+  background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(circle, rgba(123,97,255,.05) 1px, transparent 1px);background-size:26px 26px}
+h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.15}
+a{color:var(--purple);text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.eyebrow{display:inline-block;font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--purple);background:var(--purple-light);padding:6px 14px;border-radius:999px;margin-bottom:16px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:800;font-size:16px;
+  padding:14px 26px;border-radius:999px;transition:transform .15s,box-shadow .15s}
+.btn-primary{background:linear-gradient(135deg,var(--purple),var(--purple-dark));color:#fff;box-shadow:var(--shadow)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.btn-ghost{background:var(--white);color:var(--dark);border:2px solid var(--cream-dark)}
+.btn-ghost:hover{border-color:var(--purple);color:var(--purple)}
+.btn-sm{padding:10px 18px;font-size:14px}
+.btn-block{display:flex;width:100%}
+
+/* Header */
+.header{position:sticky;top:0;z-index:50;background:rgba(255,251,242,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--cream-dark)}
+.header .wrap{display:flex;align-items:center;gap:16px;padding:14px 22px}
+.logo{font-family:'Fredoka',sans-serif;font-weight:600;font-size:24px;color:var(--purple);display:flex;align-items:center;gap:8px}
+.logo .emoji{font-size:28px}
+.header-cta{margin-left:auto;display:flex;gap:10px;align-items:center}
+@media(max-width:560px){.logo{font-size:20px}.header-cta .btn-ghost{display:none}}
+
+/* Hero */
+.vhero{padding:34px 0 28px}
+.back{font-weight:800;font-size:14px;color:var(--gray-text)}
+.back:hover{color:var(--purple)}
+.vhero h1{font-size:clamp(30px,4.6vw,46px);margin:18px 0 10px}
+.vhero .sub{font-size:18px;color:var(--gray-text)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.chips span{font-size:14px;font-weight:700;background:var(--white);border:1px solid var(--cream-dark);
+  padding:8px 14px;border-radius:999px;box-shadow:var(--shadow-sm)}
+
+/* Body layout */
+.body{display:grid;grid-template-columns:1fr 340px;gap:40px;padding:14px 0 80px;align-items:start}
+@media(max-width:900px){.body{grid-template-columns:1fr;gap:28px}}
+
+.block{margin-bottom:38px}
+.block h2{font-size:24px;margin-bottom:16px}
+.lead{font-size:18px;color:var(--gray-text)}
+.jd-list{list-style:none;display:flex;flex-direction:column;gap:12px}
+.jd-list li{display:flex;gap:12px;align-items:flex-start;font-size:16px}
+.jd-list li::before{content:"";flex-shrink:0;width:10px;height:10px;border-radius:50%;margin-top:8px;
+  background:linear-gradient(135deg,var(--purple),var(--pink))}
+.req-list li::before{background:linear-gradient(135deg,var(--orange),var(--pink))}
+
+/* Schedule options */
+.sched-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:6px}
+.sched{background:var(--white);border:1px solid var(--cream-dark);border-radius:var(--radius-lg);
+  padding:20px 18px;box-shadow:var(--shadow-sm);text-align:center}
+.sched .n{font-family:'Fredoka',sans-serif;font-size:14px;color:var(--purple);font-weight:600;
+  background:var(--purple-light);border-radius:999px;padding:4px 12px;display:inline-block;margin-bottom:12px}
+.sched b{display:block;font-size:15px;margin-bottom:6px}
+.sched span{font-size:13px;color:var(--gray-text)}
+.sched-note{font-size:14px;color:var(--gray-text);margin-top:14px}
+@media(max-width:700px){.sched-grid{grid-template-columns:1fr}}
+
+/* Advantage cards */
+.adv-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.adv{background:var(--white);border:1px solid var(--cream-dark);border-radius:var(--radius-lg);padding:22px 20px;box-shadow:var(--shadow-sm)}
+.adv .ico{font-size:30px;margin-bottom:8px}
+.adv h3{font-size:17px;margin-bottom:5px}
+.adv p{font-size:14px;color:var(--gray-text)}
+@media(max-width:540px){.adv-grid{grid-template-columns:1fr}}
+
+/* Plus block */
+.plus{background:var(--green-light);border-radius:var(--radius);padding:18px 20px}
+.plus b{display:block;margin-bottom:6px}
+.plus span{font-size:15px;color:var(--gray-text)}
+
+/* Cross-link to main perks (dedup) */
+.crosslink{background:var(--purple-light);border-radius:var(--radius-lg);padding:24px 26px;display:flex;
+  align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.crosslink p{font-size:15px;color:var(--dark);max-width:560px}
+.crosslink p b{color:var(--purple-dark)}
+
+/* Test callout */
+.test{display:flex;gap:14px;align-items:flex-start;background:var(--orange-light);border-radius:var(--radius);
+  padding:18px 20px;margin-top:8px}
+.test .ico{font-size:24px;flex-shrink:0}
+.test b{display:block}
+.test span{font-size:14px;color:var(--gray-text)}
+
+/* Aside */
+.aside{position:sticky;top:96px;background:var(--white);border:1px solid var(--cream-dark);
+  border-radius:var(--radius-lg);padding:28px 26px;box-shadow:var(--shadow)}
+.aside .pay{font-family:'Fredoka',sans-serif;font-size:27px;color:var(--purple);line-height:1.15}
+.aside .pay-sub{font-size:14px;color:var(--gray-text);margin-top:6px}
+.aside hr{border:none;border-top:1px solid var(--cream-dark);margin:20px 0}
+.facts{list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:22px}
+.facts li{font-size:14px}
+.facts li b{display:block;color:var(--gray-text);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:2px}
+@media(max-width:900px){.aside{position:static;order:-1}}
+
+/* Pay breakdown */
+.pay-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:6px}
+.paycard{background:var(--white);border:1px solid var(--cream-dark);border-radius:var(--radius-lg);
+  padding:20px 18px;box-shadow:var(--shadow-sm)}
+.paycard .n{font-family:'Fredoka',sans-serif;font-size:13px;color:var(--purple);font-weight:600;
+  background:var(--purple-light);border-radius:999px;padding:4px 12px;display:inline-block;margin-bottom:12px}
+.paycard b{display:block;font-family:'Fredoka',sans-serif;font-size:24px;color:var(--dark);margin-bottom:6px}
+.paycard span{font-size:13px;color:var(--gray-text)}
+.total{background:var(--green-light);border-radius:var(--radius);padding:18px 20px;margin-top:16px;font-size:15px}
+.total b{font-family:'Fredoka',sans-serif;font-size:22px;color:var(--dark);display:block;margin-bottom:4px}
+@media(max-width:700px){.pay-grid{grid-template-columns:1fr}}
+/* Steps */
+.steps{display:flex;flex-direction:column;gap:14px;counter-reset:st}
+.step{display:flex;gap:14px;align-items:flex-start}
+.step .num{flex-shrink:0;width:32px;height:32px;border-radius:50%;background:var(--purple);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
+.step b{display:block;font-size:16px}
+.step span{font-size:14px;color:var(--gray-text)}
+
+/* Footer */
+.footer{background:var(--dark);color:#cfcfe0;padding:40px 0 28px}
+.footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center}
+.footer .logo{color:#fff}
+.footer a{color:#cfcfe0}.footer a:hover{color:#fff}
+.footer .links{display:flex;gap:20px;flex-wrap:wrap;font-size:14px}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="wrap">
+    <a href="index.html" class="logo"><span class="emoji">🦉</span> WowSpeak</a>
+    <div class="header-cta">
+      <a href="index.html#vacancies" class="btn btn-ghost btn-sm">Все вакансии</a>
+      <a href="https://job.wowteach.ru/apply-sales.html" class="btn btn-primary btn-sm">Откликнуться</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="vhero">
+  <div class="wrap">
+    <a href="index.html#vacancies" class="back">← Все вакансии</a>
+    <div style="margin-top:14px"><span class="eyebrow">● Открытая вакансия</span></div>
+    <h1>Менеджер по продажам</h1>
+    <p class="sub">Удалённо · доводите семью от вводного урока до оплаченного абонемента</p>
+    <div class="chips">
+      <span>💻 Удалённо, из любой точки мира</span>
+      <span>🗓️ 5/2 · смены 10–19 или 12–21 МСК</span>
+      <span>💰 Оклад 40 000 ₽ + KPI</span>
+      <span>📈 ≈ 90 000 ₽ при плане 100%</span>
+      <span>🔥 Только тёплые лиды</span>
+    </div>
+  </div>
+</section>
+
+<!-- BODY -->
+<div class="wrap">
+  <div class="body">
+
+    <!-- LEFT -->
+    <div>
+      <div class="block">
+        <h2>О компании</h2>
+        <p class="lead">Wowspeak — онлайн-школа английского и китайского языков для детей от 4 до 17 лет.
+        Работаем с 2012 года, с 2020-го — в онлайн-формате. Ежегодно нас выбирают 1000+ семей,
+        команда — 120+ преподавателей. Каждый год мы удваиваемся в росте.</p>
+        <p class="lead" style="margin-top:14px">Мы не просто продаём уроки — мы даём родителям возможность
+        вырастить ребёнка, который говорит на английском с интересом, уверенностью и удовольствием.</p>
+      </div>
+
+      <div class="block">
+        <h2>Кого ищем</h2>
+        <p class="lead">Менеджера по продажам — клоузера, который доводит клиента от вводного урока
+        до оплаченного абонемента. Быстро, но без потери доверия и качества.</p>
+      </div>
+
+      <div class="block">
+        <h2>Чем предстоит заниматься</h2>
+        <ul class="jd-list">
+          <li>Общаться с родителями после вводного урока — звонок или чат</li>
+          <li>Презентовать форматы и тарифы школы, подбирать оптимальный пакет занятий под ребёнка</li>
+          <li>Работать с возражениями: «дорого», «подумаем», «сравниваем»</li>
+          <li>Закрывать на оплату после согласия на вводном уроке</li>
+          <li>Дожимать тёплых лидов, которые не оплатили сразу</li>
+          <li>Вести сделку и задачи по каждому клиенту в CRM — AmoCRM и «Мой Класс», фиксировать статусы и причины отказов</li>
+          <li>Передавать клиента в отдел поддержки после оплаты с полным пакетом информации</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <h2>Что важно для нас в кандидате</h2>
+        <ul class="jd-list req-list">
+          <li>Опыт в продажах от полугода</li>
+          <li>Любите общаться голосом и текстом, умеете слышать потребность клиента и предлагать решение</li>
+          <li>Понимаете, как устроена воронка продаж, умеете доводить сделку до результата</li>
+          <li>Опыт работы с CRM</li>
+          <li>Организованность и самостоятельность: стабильный интернет и комфортное рабочее место</li>
+          <li>Оборудованное рабочее место: гарнитура и рабочая камера — для планёрок и созвонов</li>
+        </ul>
+        <div class="plus" style="margin-top:18px">
+          <b>➕ Будет преимуществом</b>
+          <span>Опыт в онлайн-образовании · знание AmoCRM и «Мой Класс» — это те системы, в которых работаем мы</span>
+        </div>
+      </div>
+
+      <div class="block">
+        <h2>Сколько получится зарабатывать</h2>
+        <div class="pay-grid">
+          <div class="paycard"><span class="n">Оклад</span><b>40 000 ₽</b><span>фиксированная часть, не зависит от плана</span></div>
+          <div class="paycard"><span class="n">KPI · клиенты</span><b>до 30 000 ₽</b><span>за количество новых клиентов</span></div>
+          <div class="paycard"><span class="n">KPI · сумма</span><b>до 20 000 ₽</b><span>за общую сумму продаж</span></div>
+        </div>
+        <div class="total">
+          <b>≈ 90 000 ₽ при выполнении плана на 100%</b>
+          При перевыполнении бонус растёт: <b style="display:inline;font-size:15px">+1 000 ₽</b> за каждого клиента сверх плана
+          и <b style="display:inline;font-size:15px">+5%</b> от суммы продаж сверх плана. Например, при 105% выполнения плана
+          доход менеджера — от 100 000 ₽.
+        </div>
+      </div>
+
+      <div class="block">
+        <h2>Условия</h2>
+        <div class="adv-grid">
+          <div class="adv"><div class="ico">🌍</div><h3>Полностью удалённо</h3><p>Работаете из любой точки мира — важен интернет и тихое место, а не город.</p></div>
+          <div class="adv"><div class="ico">🗓️</div><h3>График 5/2</h3><p>Смена с 10:00 до 19:00 или с 12:00 до 21:00 по Москве — выбираете при выходе.</p></div>
+          <div class="adv"><div class="ico">📄</div><h3>Официально</h3><p>Оформление как самозанятого, прозрачные условия оплаты без сюрпризов.</p></div>
+          <div class="adv"><div class="ico">🎓</div><h3>Обучение на старте</h3><p>Подробно разбираем продукт, тарифы и работу с клиентами — не бросаем в воду.</p></div>
+          <div class="adv"><div class="ico">🔥</div><h3>Тёплая база</h3><p>Никаких холодных звонков: семья уже побывала на вводном уроке и знает нас.</p></div>
+          <div class="adv"><div class="ico">☕️</div><h3>Команда и бонусы</h3><p>Регулярные онлайн-встречи команды и скидка на обучение английскому в школе.</p></div>
+        </div>
+      </div>
+
+      <div class="block">
+        <h2>Этапы отбора</h2>
+        <div class="steps">
+          <div class="step"><div class="num">1</div><div><b>Заполнение анкеты</b><span>Пара минут: опыт, CRM, удобная смена. Резюме обязательно.</span></div></div>
+          <div class="step"><div class="num">2</div><div><b>Встреча с руководителем отдела продаж</b><span>40 минут в Zoom: разбираем опыт и то, как вы ведёте разговор с клиентом.</span></div></div>
+          <div class="step"><div class="num">3</div><div><b>Job offer и начало обучения</b><span>Договариваемся об условиях и смене — и вы начинаете обучение продукту.</span></div></div>
+        </div>
+      </div>
+
+      <div class="crosslink">
+        <p><b>Присоединяйтесь к Wowspeak</b> — и станьте частью команды, которая меняет систему детского образования к лучшему. Ждём ваш отклик 🙂</p>
+        <a href="index.html#about" class="btn btn-ghost btn-sm">О школе →</a>
+      </div>
+    </div>
+
+    <!-- ASIDE -->
+    <aside class="aside">
+      <div class="pay">≈ 90 000 ₽ <span style="font-size:15px;color:var(--gray-text)">при плане 100%</span></div>
+      <div class="pay-sub">Оклад 40 000 ₽ + KPI до 50 000 ₽. При перевыполнении — от 100 000 ₽.</div>
+      <hr>
+      <ul class="facts">
+        <li><b>Формат</b>Полностью удалённо, из любой точки мира</li>
+        <li><b>График</b>5 дней в неделю · смена 10–19 или 12–21 МСК</li>
+        <li><b>Опыт</b>В продажах от полугода</li>
+        <li><b>CRM</b>AmoCRM и «Мой Класс»</li>
+        <li><b>Оформление</b>Самозанятость</li>
+        <li><b>Лиды</b>Тёплые — после вводного урока</li>
+      </ul>
+      <a href="https://job.wowteach.ru/apply-sales.html" class="btn btn-primary btn-block">Откликнуться</a>
+      <div class="test" style="margin-top:18px">
+        <span class="ico">📎</span>
+        <div><b>Нужно резюме</b><span>Приложите файл или фото прямо в анкете — без него отклик не рассматриваем.</span></div>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <a href="index.html" class="logo"><span class="emoji">🦉</span> WowSpeak</a>
+    <div class="links">
+      <a href="index.html#vacancies">Все вакансии</a>
+      <a href="index.html#about">О школе</a>
+      <a href="mailto:hr@wowteach.ru">hr@wowteach.ru</a>
+      <a href="https://wowspeak-online.ru">Сайт школы</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
